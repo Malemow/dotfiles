@@ -21,3 +21,9 @@ alias df='duf'
 
 # 全域 --help 高亮
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain --paging=never --color always'
+
+# 公司 VPN
+alias von='PASS=$(op item get "sslvpn_T24011" --fields label=密碼 --reveal) && echo -e "T24011\n$PASS" | sudo openvpn --config /etc/openvpn/client/sslvpn_T24011.ovpn --auth-user-pass /dev/stdin --daemon'
+alias voff='sudo pkill openvpn'
+
+alias clapper='LC_ALL=zh_CN.UTF-8 flatpak run com.github.rafostar.Clapper'

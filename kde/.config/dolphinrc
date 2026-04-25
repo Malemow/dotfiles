@@ -4,6 +4,7 @@ MenuBar=Disabled
 update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
 
 [General]
+ShowFullPathInTitlebar=true
 ShowSelectionToggle=false
 ShowStatusBar=false
 Version=202
@@ -21,4 +22,4 @@ IconSize=16
 ToolButtonStyle=IconOnly
 
 [PreviewSettings]
-Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail,ffmpegthumbs
+Plugins=appimagethumbnail,djvuthumbnail,exrthumbnail,glycin-image-rs,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail,imagethumbnail,ffmpegthumbs,cursorthumbnail,comicbookthumbnail,directorythumbnail,ebookthumbnail,audiothumbnail
