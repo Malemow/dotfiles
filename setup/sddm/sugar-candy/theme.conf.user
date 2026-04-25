@@ -1,0 +1,10 @@
+[General]
+Background="background.jpg"
+FormBackground=#00000066
+HeaderText="Welcome Back"
+DateFormat="dddd, d MMMM"
+TimeFormat="HH:mm"
+MainFont="JetBrainsMono Nerd Font"
+FontSize=12
+UserPictureEnabled=true
+UserPictureRounding=50

@@ -1,0 +1,109 @@
+/**
+ * ROFI Layout 
+ * Quick Apps Layout (Horizontal Searchable Style)
+ */
+
+configuration {
+    modi:                        "drun";
+    show-icons:                  true;
+    drun-display-format:         "{name}";
+}
+
+@theme "~/.config/rofi/theme.rasi"
+
+window {
+    width:                       800px;
+    height:                      350px; /* 增加高度以容納搜尋框和兩排結果 */
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0px;
+    padding:                     20px;
+    border:                      2px solid;
+    border-radius:               20px;
+    border-color:                @main-br;
+    background-color:            @main-bg;
+    location:                    center;
+    anchor:                      center;
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     15px;
+    padding:                     0px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     10px;
+    border-radius:               10px;
+    background-color:            white / 5%;
+    text-color:                  @main-fg;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    text-color:                  inherit;
+    background-color:            transparent;
+}
+
+entry {
+    enabled:                     true;
+    text-color:                  inherit;
+    background-color:            transparent;
+    placeholder:                 "Search Apps...";
+    placeholder-color:           inherit;
+}
+
+listview {
+    enabled:                     true;
+    padding:                     0px;
+    spacing:                     10px;
+    columns:                     5; /* 每排顯示 5 個 */
+    lines:                       2; /* 預設顯示 2 排 */
+    layout:                      vertical;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    cursor:                      "default";
+    background-color:            transparent;
+    fixed-height:                false;
+    fixed-columns:               true;
+}
+
+element {
+    enabled:                     true;
+    orientation:                 vertical;
+    spacing:                     5px;
+    padding:                     10px;
+    border-radius:               12px;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+
+element selected.normal {
+    background-color:            @select-bg;
+    text-color:                  @select-fg;
+}
+
+element-icon {
+    size:                        64px;
+    cursor:                      inherit;
+    background-color:            transparent;
+    horizontal-align:            0.5;
+}
+
+element-text {
+    enabled:                     true;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+    horizontal-align:            0.5;
+    vertical-align:              0.5;
+}

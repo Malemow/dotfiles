@@ -1,0 +1,56 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Recursive Sans", "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #cdd6f4;
+}
+
+#workspaces, #window, #clock, #cpu, #memory, #pulseaudio, #backlight, #battery, #tray, #custom-power {
+    background: rgba(30, 30, 46, 0.8);
+    padding: 0px 15px;
+    margin: 5px 3px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 工作區特定樣式 */
+#workspaces button {
+    padding: 0 5px;
+    color: #bac2de;
+}
+
+#workspaces button.active {
+    color: #89b4fa;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+}
+
+/* 讓中間的時鐘看起來更顯眼 */
+#clock {
+    color: #cba6f7;
+    font-weight: bold;
+}
+
+/* 各模組顏色 */
+#cpu { color: #fab387; }
+#memory { color: #a6e3a1; }
+#pulseaudio { color: #89b4fa; }
+#backlight { color: #f9e2af; }
+#battery { color: #94e2d5; }
+#battery.charging { color: #a6e3a1; }
+#battery.warning:not(.charging) { color: #fab387; }
+#battery.critical:not(.charging) { color: #f38ba8; }
+
+#custom-power {
+    color: #f38ba8;
+    padding-right: 18px;
+}

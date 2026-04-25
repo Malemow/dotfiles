@@ -1,0 +1,25 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "separator": " 󰄾 "
+  },
+  "modules": [
+    { "type": "os", "key": "󰣇 OS", "keyColor": "red" },
+    { "type": "kernel", "key": "󰌢 Ker", "keyColor": "red" },
+    { "type": "uptime", "key": "󱫐 Upt", "keyColor": "red" },
+    { "type": "packages", "key": "󰏗 Pkg", "keyColor": "green" },
+    { "type": "shell", "key": "󱆃 Sh ", "keyColor": "green" },
+    { "type": "display", "key": "󰍹 Mon", "keyColor": "green" },
+    { "type": "wm", "key": "󱗃 WM ", "keyColor": "yellow" },
+    { "type": "icons", "key": "󰀻 Ico", "keyColor": "yellow" },
+    { "type": "cursor", "key": "󰳽 Cur", "keyColor": "yellow" },
+    { "type": "terminal", "key": "󰆍 Ter", "keyColor": "yellow" },
+    { "type": "cpu", "key": "󰻠 CPU", "keyColor": "blue" },
+    { "type": "gpu", "key": "󰊴 GPU", "keyColor": "blue" },
+    { "type": "memory", "key": "󰍛 Mem", "keyColor": "magenta" },
+    { "type": "swap", "key": "󰓡 Swp", "keyColor": "magenta" },
+    { "type": "disk", "key": "󰋊 Dsk", "keyColor": "magenta" },
+    "break",
+    { "type": "colors", "symbol": "circle" }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "height": 31,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "reload_style_on_change": true,
+
+    // 導入模組定義
+    "include": ["~/.config/waybar/modules.jsonc"],
+
+    "modules-left": [
+        "custom/smallspacer",
+        "hyprland/workspaces",
+        "custom/spacer",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "custom/spacer",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "custom/spacer",
+        "tray",
+        "custom/power",
+        "custom/smallspacer"
+    ]
+}

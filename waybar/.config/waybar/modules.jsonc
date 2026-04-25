@@ -1,0 +1,188 @@
+{
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 40,
+        "separate-outputs": true
+    },
+
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
+        "max-length": 50,
+        "player-icons": {
+            "default": "<span>󰎈</span>",
+            "spotify": "<span></span>",
+            "firefox": "<span>󰈹</span>",
+            "chrome": "<span></span>"
+        },
+        "status-icons": {
+            "paused": "<span></span>"
+        },
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "ignored-players": ["firefox"] 
+    },
+
+    "clock": {
+        "format": "  {:%I:%M %p}",
+        "format-alt": "󰃭  {:%A, %B %d, %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+
+    "cpu": {
+        "interval": 2,
+        "format": "  {usage}%",
+        "tooltip": false
+    },
+
+    "memory": {
+        "interval": 2,
+        "format": "  {used}GB",
+        "tooltip": false
+    },
+
+    "custom/gpuinfo": {
+        "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,noheader,nounits | awk -F',' '{gsub(/ /,\"\"); printf \"{\\\"text\\\":\\\"󰢮  %d%% %d°C\\\",\\\"tooltip\\\":\\\"GPU使用率: %d%% | 溫度: %d°C\\\"}\\n\", $1, $2, $1, $2}'",
+        "return-type": "json",
+        "format": "{}",
+        "interval": 5,
+        "tooltip": true
+    },
+
+    "custom/sensorsinfo": {
+        "exec": "sensors | grep 'Package id 0:' | awk '{print $4}' | sed 's/[^0-9.]//g' | awk '{print \"{\\\"text\\\":\\\" \"$1\"°C\\\",\\\"tooltip\\\":\\\"CPU 核心溫度\\\"}\"}'",
+        "return-type": "json",
+        "format": "{}",
+        "interval": 5,
+        "tooltip": true
+    },
+
+    "custom/weather": {
+        "exec": "curl -s 'wttr.in/?format=%c+%t' | awk '{print \"{\\\"text\\\":\\\"\"$0\"\\\",\\\"tooltip\\\":\\\"詳細天氣資訊\\\"}\"}'",
+        "return-type": "json",
+        "format": "{}",
+        "interval": 3600,
+        "tooltip": true
+    },
+
+    "custom/keybindhint": {
+        "format": " ",
+        "on-click": "~/.config/waybar/keybinds_rofi.sh",
+        "tooltip": true,
+        "tooltip-format": "點擊查看快捷鍵 (Rofi)"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
+    },
+
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
+    "custom/spacer": {
+        "format": "|",
+        "tooltip": false
+    },
+
+    "custom/orbit": {
+        "format": "{}",
+        "exec": "orbit waybar-status",
+        "return-type": "json",
+        "interval": 10,
+        "on-click": "orbit toggle top-right",
+        "tooltip": true,
+        "tooltip-format": "網路與藍牙控制"
+    },
+
+    "custom/smallspacer": {
+        "format": " ",
+        "tooltip": false
+    },
+
+    "group/audio": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-to-left": true,
+            "click-to-reveal": true
+        },
+        "modules": ["pulseaudio", "pulseaudio/slider"]
+    },
+
+    "group/light": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-to-left": true,
+            "click-to-reveal": true
+        },
+        "modules": ["backlight", "backlight/slider"]
+    }
+}

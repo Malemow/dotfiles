@@ -1,0 +1,102 @@
+/**
+ * ROFI Keybinds Layout 
+ *
+ * Optimized for displaying long keybinding lists with Chinese descriptions.
+ */
+
+// Config //
+configuration {
+    modi:                        "drun";
+    show-icons:                  false;
+}
+
+@theme "~/.cache/hyde/wallbash/wallbash.rasi"
+@theme "~/.config/rofi/theme.rasi"
+
+// Main //
+window {
+    width:                       35em; /* 縮小視窗寬度 */
+    height:                      30em;
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    border:                      2px;
+    border-radius:               12px; /* 稍微減小圓角 */
+    border-color:                @main-br;
+    background-color:            @main-bg;
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 vertical;
+    children:                    [ "inputbar", "listview" ];
+    background-color:            transparent;
+}
+
+// Inputs //
+inputbar {
+    enabled:                     true;
+    padding:                     1em; /* 減少內邊距 */
+    children:                    [ "prompt", "entry" ];
+    background-color:            @main-bg;
+}
+
+prompt {
+    enabled:                     true;
+    padding:                     0.4em 0.8em;
+    border-radius:               8px;
+    background-color:            @select-bg;
+    text-color:                  @select-fg;
+}
+
+entry {
+    enabled:                     true;
+    padding:                     0.4em 0.8em;
+    text-color:                  @main-fg;
+    background-color:            transparent;
+    placeholder:                 " 搜尋...";
+}
+
+// Lists //
+listview {
+    enabled:                     true;
+    padding:                     0.5em;
+    columns:                     1;
+    lines:                       15; /* 增加行數顯示 */
+    cycle:                       true;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+
+// Elements //
+element {
+    enabled:                     true;
+    padding:                     0.4em 0.6em; /* 顯著減少內邊距以縮小行距 */
+    margin:                      0.1em 0.3em;
+    border-radius:               8px;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+
+element selected.normal {
+    background-color:            @select-bg;
+    text-color:                  @select-fg;
+}
+
+element-text {
+    font:                        "JetBrainsMono Nerd Font 10"; /* 調小字體 */
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}

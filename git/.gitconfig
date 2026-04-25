@@ -1,0 +1,48 @@
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /opt/1Password/op-ssh-sign
+[commit]
+	gpgsign = true
+[user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBbSEXLnfO8dmNjVOJsno3pn8miHQtfX7c/FI5b+Ma3I
+	email = lifan.lin@malemow.com
+	name = Malemow
+[color]
+    status = auto
+    diff = auto
+    branch = auto
+    interactive = auto
+    grep = auto
+    ui = auto
+[core]
+    editor = vim
+    autocrlf = input
+    ignorecase = true
+[push]
+    default = simple
+[alias]
+    # lg = log --color --graph --all --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<Author: %C(ul)%an%C(reset dim blue) Committer: %C(ul)%cn%C(reset bold blue)>%C(reset)'
+    lg = log --color --graph --all --pretty=format:'%C(red)%h %C(bold blue)<%C(ul)%an%C(reset bold blue)>%C(reset) - %s %C(green)(%cr) %C(yellow)%d%C(reset)' # --date=format:'%Y-%m-%d %H:%M'
+    lgg = log --color --graph --all --pretty=format:'%C(red)%h %C(green)(%cr) %C(bold blue)<%C(ul)%an%C(reset bold blue)>%C(reset)%C(reset) - %s %C(yellow)%d%C(reset)'
+    ch = checkout
+    br = branch
+    ba = branch -a
+    bm = branch --merged
+    bn = branch --no-merged
+    st = status
+    ss = stash
+    sl = stash list
+    sp = stash pop
+    ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+    pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
+    df = "!git lg | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}"
+    dname = diff --name-only
+    dtree = diff-tree -r --no-commit-id --name-status --text --diff-filter=ACDMRT
+    dump = cat-file -p
+    type = cat-file -t
+    find = "!f() { git log --pretty=format:\"%h %cd [%cn] %s%d\" --date=relative -S'pretty' -S\"$@\" | peco | awk '{print $1}' | xargs -I {} git diff {}^ {}; }; f"
+    # edit conflicted file on merge
+    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+    # add conflicted file on merge
+    add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"

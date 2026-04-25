@@ -1,0 +1,4 @@
+[General]
+TerminalApplication=kitty
+[Wallet]
+Enabled=false

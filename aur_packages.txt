@@ -1,0 +1,10 @@
+1password
+1password-cli
+fcitx5-mcbopomofo-git
+google-chrome
+hyprquery-git
+orbit-wifi
+paru
+paru-debug
+pyprland
+sddm-sugar-candy-git

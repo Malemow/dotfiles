@@ -1,0 +1,16 @@
+com.github.rafostar.Clapper
+com.github.tchx84.Flatseal
+com.github.unrud.VideoDownloader
+com.github.wwmm.easyeffects
+com.obsproject.Studio
+com.usebottles.bottles
+dev.vencord.Vesktop
+io.github.flattool.Warehouse
+io.gitlab.adhami3310.Impression
+io.gitlab.theevilskeleton.Upscaler
+io.missioncenter.MissionCenter
+org.blender.Blender
+org.gimp.GIMP
+org.gnome.Boxes
+org.inkscape.Inkscape
+org.kde.krita
